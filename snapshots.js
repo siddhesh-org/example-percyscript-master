@@ -12,11 +12,11 @@ PercyScript.run(async (page, percySnapshot) => {
   console.log(`Server started at ${TEST_URL}`);
 
   await page.goto(TEST_URL);
-  await percySnapshot('TodoMVC home page', { widths: [375, 768, 1024, 1200] });
+  await percySnapshot('TodoMVC home page', { widths: [360, 375, 768, 1024, 1200] });
 
   // Enter a new to-do.
   await page.type('.new-todo', 'A really important todo');
   await page.keyboard.press('Enter');
-  await percySnapshot('TodoMVC with a new todo', { widths: [375, 768, 1024, 1200] });
+  await percySnapshot('TodoMVC with a new todo', { widths: [360, 375, 768, 1024, 1200] });
   server.close();
 });
